@@ -8,7 +8,11 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <NavigationView x:Name="NavView">
+        <NavigationView x:Name="NavView"
+                        ItemInvoked="NavView_ItemInvoked"
+                        SelectionChanged="NavView_SelectionChanged"
+                        Loaded="NavView_Loaded">
+
             <NavigationView.MenuItems>
                 <NavigationViewItem Content="Home" Tag="home">
                     <NavigationViewItem.Icon>
@@ -16,10 +20,25 @@
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
                 <NavigationViewItemSeparator/>
-                <NavigationViewItemHeader Content="Main pages"/>
-                <NavigationViewItem Icon="AllApps" Content="Apps" Tag="apps"/>
-                <NavigationViewItem Icon="Video" Content="Games" Tag="games"/>
-                <NavigationViewItem Icon="Audio" Content="Music" Tag="music"/>
+                <NavigationViewItem Content="Red" Tag="red"/>
+                <NavigationViewItem Content="Pink" Tag="pink"/>
+                <NavigationViewItem Content="Purple" Tag="purple"/>
+                <NavigationViewItem Content="Deep purple" Tag="deep purple"/>
+                <NavigationViewItem Content="Indigo" Tag="indigo"/>
+                <NavigationViewItem Content="Blue" Tag="blue"/>
+                <NavigationViewItem Content="Light blue" Tag="light blue"/>
+                <NavigationViewItem Content="Cyan" Tag="cyan"/>
+                <NavigationViewItem Content="Teal" Tag="teal"/>
+                <NavigationViewItem Content="Green" Tag="green"/>
+                <NavigationViewItem Content="Light green" Tag="light green"/>
+                <NavigationViewItem Content="Lime" Tag="lime"/>
+                <NavigationViewItem Content="Yellow" Tag="yellow"/>
+                <NavigationViewItem Content="Amber" Tag="amber"/>
+                <NavigationViewItem Content="Orange" Tag="orange"/>
+                <NavigationViewItem Content="Deep orange" Tag="deep orange"/>
+                <NavigationViewItem Content="Brown" Tag="brown"/>
+                <NavigationViewItem Content="Grey" Tag="grey"/>
+                <NavigationViewItem Content="Blue grey" Tag="blue grey"/>
             </NavigationView.MenuItems>
 
             <NavigationView.AutoSuggestBox>
@@ -34,17 +53,10 @@
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Style="{StaticResource TitleTextBlockStyle}"
+                           x:Name="NavHeaderTitle"
                            FontSize="28"
                            VerticalAlignment="Center"
                            Text="Welcome"/>
-                        <CommandBar Grid.Column="1"
-                            HorizontalAlignment="Right"
-                            VerticalAlignment="Center"
-                            DefaultLabelPosition="Right"
-                            Background="{ThemeResource SystemControlBackgroundAltHighBrush}">
-                            <AppBarButton Label="Refresh" Icon="Refresh"/>
-                            <AppBarButton Label="Import" Icon="Import"/>
-                        </CommandBar>
                     </Grid>
                 </DataTemplate>
             </NavigationView.HeaderTemplate>
@@ -55,7 +67,6 @@
                         <NavigationThemeTransition/>
                     </TransitionCollection>
                 </Frame.ContentTransitions>
-                <Button Content="Button" HorizontalAlignment="Left" Margin="202,190,0,0" VerticalAlignment="Top" Click="Button_Click"/>
             </Frame>
 
         </NavigationView>
