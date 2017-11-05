@@ -10,14 +10,15 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <TextBlock x:Name="AppTitle"
-                       Style="{StaticResource CaptionTextBlockStyle}"
-                       Text="{x:Bind appmodel:Package.Current.DisplayName}"
-                       IsHitTestVisible="False"/>
+                   Style="{StaticResource CaptionTextBlockStyle}"
+                   Text="{x:Bind appmodel:Package.Current.DisplayName}"
+                   IsHitTestVisible="False"/>
 
         <NavigationView x:Name="NavView"
                         ItemInvoked="NavView_ItemInvoked"
                         SelectionChanged="NavView_SelectionChanged"
-                        Loaded="NavView_Loaded">
+                        Loaded="NavView_Loaded"
+                        IsSettingsVisible="False">
 
             <NavigationView.MenuItems>
                 <NavigationViewItem Content="Home" Tag="home">
