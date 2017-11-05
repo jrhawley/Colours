@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.ApplicationModel.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -26,6 +27,15 @@ namespace Colours
         public MainPage()
         {
             this.InitializeComponent();
+            CoreApplicationViewTitleBar titleBar = CoreApplication.GetCurrentView().TitleBar;
+            titleBar.LayoutMetricsChanged += TitleBar_LayoutMetricsChanged;
+            AppTitle.Height = titleBar.Height;
+        }
+
+
+        private void TitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sender, object args)
+        {
+            AppTitle.Margin = new Thickness(CoreApplication.GetCurrentView().TitleBar.SystemOverlayLeftInset + 12, 8, 0, 0);
         }
 
         private void NavView_Loaded(object sender, RoutedEventArgs e)
