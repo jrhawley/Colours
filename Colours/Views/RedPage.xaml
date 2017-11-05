@@ -7,7 +7,32 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock Text="Red Page" />
-    </Grid>
+    <Page.Resources>
+        <DataTemplate x:Key="ColourTemplate">
+            <Grid
+                Background="White"
+                BorderBrush="Black"
+                BorderThickness="1">
+                <TextBlock Text="{Binding ColourName}"/>
+                <TextBlock Text="{Binding ColourHex}"/>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+
+    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button Content="#ffebee" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Click="Button_Click"/>
+        <Button Content="#ffcdd2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Click="Button_Click"/>
+        <Button Content="#ef9a9a" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Click="Button_Click"/>
+        <Button Content="#e57373" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Click="Button_Click"/>
+        <Button Content="#ef5350" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Click="Button_Click"/>
+        <Button Content="#f44336" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Click="Button_Click"/>
+        <Button Content="#e53935" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Click="Button_Click"/>
+        <Button Content="#d32f2f" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Click="Button_Click"/>
+        <Button Content="#c62828" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Click="Button_Click"/>
+        <Button Content="#b71c1c" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Click="Button_Click"/>
+        <Button Content="#ff8a80" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Click="Button_Click"/>
+        <Button Content="#ff5252" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Click="Button_Click"/>
+        <Button Content="#ff1744" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Click="Button_Click"/>
+        <Button Content="#d50000" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Click="Button_Click"/>
+    </StackPanel>
 </Page>

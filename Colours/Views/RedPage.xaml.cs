@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.ApplicationModel.DataTransfer;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -25,6 +26,19 @@ namespace Colours.Views
         public RedPage()
         {
             this.InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            // cast sender as Button
+            Button b = (Button)sender;
+            // DataPackage for handling clipboard
+            DataPackage dataPackage = new DataPackage();
+
+            // assign button text content to dataPackage
+            dataPackage.SetText(b.Content.ToString());
+            // assign dataPackage to clipboard
+            Clipboard.SetContent(dataPackage);
         }
     }
 }
