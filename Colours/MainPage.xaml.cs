@@ -65,8 +65,8 @@ namespace Colours
                         ContentFrame.Navigate(typeof(HomePage));
                         break;
 
-                    case "Red":
-                        ContentFrame.Navigate(typeof(RedPage));
+                    default:
+                        ContentFrame.Navigate(typeof(RedPage), "red");
                         break;
                 }
             }
@@ -89,8 +89,8 @@ namespace Colours
                         ContentFrame.Navigate(typeof(HomePage));
                         break;
 
-                    case "red":
-                        ContentFrame.Navigate(typeof(RedPage));
+                    default:
+                        ContentFrame.Navigate(typeof(RedPage), "red");
                         break;
                 }
             }
