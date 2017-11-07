@@ -102,8 +102,8 @@
     <Compile Include="Views\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\RedPage.xaml.cs">
-      <DependentUpon>RedPage.xaml</DependentUpon>
+    <Compile Include="Views\ColourPage.xaml.cs">
+      <DependentUpon>ColourPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
@@ -174,7 +174,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\RedPage.xaml">
+    <Page Include="Views\ColourPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

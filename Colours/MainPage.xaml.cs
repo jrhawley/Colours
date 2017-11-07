@@ -66,7 +66,7 @@ namespace Colours
                         break;
 
                     default:
-                        ContentFrame.Navigate(typeof(RedPage), "red");
+                        ContentFrame.Navigate(typeof(ColourPage), "red");
                         break;
                 }
             }
@@ -90,7 +90,7 @@ namespace Colours
                         break;
 
                     default:
-                        ContentFrame.Navigate(typeof(RedPage), "red");
+                        ContentFrame.Navigate(typeof(ColourPage), item.Tag);
                         break;
                 }
             }

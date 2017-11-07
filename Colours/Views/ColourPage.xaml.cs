@@ -23,11 +23,31 @@ namespace Colours.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class RedPage : Page
+    public sealed partial class ColourPage : Page
     {
-        public RedPage()
+        public ColourPage()
         {
             this.InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            // cast sender as Button
+            Button b = (Button)sender;
+            // DataPackage for handling clipboard
+            DataPackage dataPackage = new DataPackage();
+
+            // assign button text content to dataPackage
+            dataPackage.SetText(b.Content.ToString());
+            // assign dataPackage to clipboard
+            Clipboard.SetContent(dataPackage);
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+
+            string tag = (string)e.Parameter;
 
             // Hex values of colours
             Dictionary<string, List<string>> colours = new Dictionary<string, List<string>>()
@@ -401,39 +421,26 @@ namespace Colours.Views
                     }
                 }
             };
-            for (int i = 0; i < 14; i++)
+            for (int i = 0; i < colours[tag].Count; i++)
             {
                 // Extract RGB values from string and make SolidColorBrush
                 byte a = byte.Parse("FF", NumberStyles.HexNumber);
-                byte r = byte.Parse(colours["red"][i].Substring(1, 2), NumberStyles.HexNumber);
-                byte g = byte.Parse(colours["red"][i].Substring(3, 2), NumberStyles.HexNumber);
-                byte b = byte.Parse(colours["red"][i].Substring(5, 2), NumberStyles.HexNumber);
+                byte r = byte.Parse(colours[tag][i].Substring(1, 2), NumberStyles.HexNumber);
+                byte g = byte.Parse(colours[tag][i].Substring(3, 2), NumberStyles.HexNumber);
+                byte b = byte.Parse(colours[tag][i].Substring(5, 2), NumberStyles.HexNumber);
                 Color col = Color.FromArgb(a, r, g, b);
                 SolidColorBrush brush = new SolidColorBrush(col);
 
                 // Add buttons to StackPanel
                 Button colourButton = new Button
                 {
-                    Content = colours["red"][i],
+                    Content = colours[tag][i],
                     Background = brush,
                     Width = 100
                 };
                 colourButton.Click += Button_Click;
                 ColourPanel.Children.Add(colourButton);
             }
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            // cast sender as Button
-            Button b = (Button)sender;
-            // DataPackage for handling clipboard
-            DataPackage dataPackage = new DataPackage();
-
-            // assign button text content to dataPackage
-            dataPackage.SetText(b.Content.ToString());
-            // assign dataPackage to clipboard
-            Clipboard.SetContent(dataPackage);
         }
     }
 }
