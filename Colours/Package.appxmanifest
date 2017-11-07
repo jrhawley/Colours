@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="d31f177c-dab3-48ad-b123-d2e6f2395ed5" Publisher="CN=james" Version="0.0.0.0" />
-  <mp:PhoneIdentity PhoneProductId="d31f177c-dab3-48ad-b123-d2e6f2395ed5" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Identity Name="59820JamesHawley.DesignColourPallette" Publisher="CN=5BBAC27B-B92E-45D3-8637-219737AB45A9" Version="1.1.2.0" />
+  <mp:PhoneIdentity PhoneProductId="15d31104-bd50-4f38-b961-4cc8a358b327" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>Colours</DisplayName>
+    <DisplayName>Design Colour Pallette</DisplayName>
     <PublisherDisplayName>James Hawley</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -15,8 +15,8 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Colours.App">
-      <uap:VisualElements DisplayName="Colours" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="Colours" BackgroundColor="transparent">
-        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square310x310Logo="Assets\Square310x310Logo.png" Square71x71Logo="Assets\Square71x71Logo.png">
+      <uap:VisualElements DisplayName="Design Colour Pallette" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="Colours" BackgroundColor="transparent">
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square310x310Logo="Assets\Square310x310Logo.png" Square71x71Logo="Assets\Square71x71Logo.png" ShortName="Design Colour Pallette">
           <uap:ShowNameOnTiles>
             <uap:ShowOn Tile="square310x310Logo" />
           </uap:ShowNameOnTiles>
