@@ -8,6 +8,8 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        
+        <TextBlock>
+            Use this tool to select Material Design Colours. Clicking on colours copies them to your clipboard.
+        </TextBlock>
     </Grid>
 </Page>
