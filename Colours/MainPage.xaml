@@ -9,14 +9,8 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock x:Name="AppTitle"
-                   Style="{StaticResource CaptionTextBlockStyle}"
-                   Text="{x:Bind appmodel:Package.Current.DisplayName}"
-                   IsHitTestVisible="False"/>
-
         <NavigationView x:Name="NavView"
                         Header="{x:Bind ((NavigationViewItem)NavView.SelectedItem).Content, Mode=OneWay}"
-                        ItemInvoked="NavView_ItemInvoked"
                         SelectionChanged="NavView_SelectionChanged"
                         Loaded="NavView_Loaded"
                         IsSettingsVisible="False"
@@ -73,7 +67,6 @@
                     </TransitionCollection>
                 </Frame.ContentTransitions>
             </Frame>
-
         </NavigationView>
     </Grid>
 </Page>
